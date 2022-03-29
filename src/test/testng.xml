@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite">
+
+    <test name="MyFile">
+        <classes>
+            <class name="firstTests.FirstTest"></class>
+        </classes>
+    </test>
+
+    <test name="MyFile2">
+        <parameter name="IDont" value="666"></parameter>
+        <parameter name="IKnow" value="777"></parameter>
+        <classes>
+            <class name="firstTests.ThirdTest"></class>
+        </classes>
+    </test>
+
+    <test name="XMLfor">
+        <parameter name="name" value="Александр"></parameter>
+        <parameter name="surname" value="Александрович"></parameter>
+        <classes>
+            <class name="firstTests.NewTestForXML"></class>
+        </classes>
+    </test>
+
+
+    
+</suite>
