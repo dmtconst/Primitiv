@@ -4,7 +4,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
 
-public class SecondTest extends BaseTest{
+public class SecondTest extends BaseTestFirst {
 
     @DataProvider(name = "SetEnviroment", parallel = true)
     public Object[][] getDats(){

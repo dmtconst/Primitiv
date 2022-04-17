@@ -72,7 +72,7 @@ public class Collection {
         
         HashMap map2 = new HashMap();
         map2.put(1,new Cat("MARFA").getName());
-        map2.put(5,new Pig().getName());
+        map2.put(5,new Pig("Nix-nux").getName());
         map2.put(7,new Dog("Sharik").getName());
         System.out.println(map2.get(1));
         System.out.println(map2.get(5));

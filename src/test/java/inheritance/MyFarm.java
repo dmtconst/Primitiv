@@ -13,7 +13,7 @@ public class MyFarm {
         Dog sobaka1 = new Dog("TIM");
         sobaka1.getColor();
 
-        Pig svin = new Pig();
+        Pig svin = new Pig("Nux-nux");
         System.out.println(svin.getName());
         svin.say();
         svin.getHobbie();

@@ -9,7 +9,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 
-public class FirstTest extends BaseTest{
+public class FirstTest extends BaseTestFirst {
 
     @Test
     public void startTest(){

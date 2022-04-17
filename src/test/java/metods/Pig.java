@@ -1,9 +1,14 @@
 package metods;
 
 import inheritance.AnimalColor;
+import inheritance.Animals;
 
-public class Pig implements AnimalColor {
+public class Pig extends Animals implements AnimalColor {
     private String name = "Naf-Naf";
+
+    public Pig(String name) {
+        super(name);
+    }
 
     public void say(){
         System.out.println("Xru-xru");

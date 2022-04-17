@@ -16,8 +16,10 @@
         <aspectjs.version>1.9.8</aspectjs.version>
         <server.port>4448</server.port>
         <fork.Count>1</fork.Count>
-        <suiteXmlFile>\src\test\testng.xml</suiteXmlFile>
-        <spmeModule.includes>firstTests.FirstTest</spmeModule.includes>
+
+        <suiteXmlFile>src\test\testng.xml</suiteXmlFile>
+        <someModule.includes>firstTests.FirstTest</someModule.includes>
+        <stend.key>stend1</stend.key>
     </properties>
 
     <dependencies>
@@ -56,11 +58,47 @@
             <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
+            <groupId> org.apache.cassandra</groupId>
+            <artifactId>cassandra-all</artifactId>
+            <version>0.8.1</version>
+
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>31.1-jre</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.16</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
         </dependency>
 
     </dependencies>
@@ -74,12 +112,13 @@
                 <version>2.22.2</version>
                 <configuration>
 
-                    <suiteXmlFiles>
-                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
-                    </suiteXmlFiles>
+<!--                    <suiteXmlFiles>-->
+<!--                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>-->
+<!--                    </suiteXmlFiles>-->
+
                     <includes>
                         <include>
-                            ${spmeModule.includes}
+                            ${someModule.includes}
                         </include>
                     </includes>
 
@@ -102,6 +141,12 @@
                             <name>ServerPort</name>
                             <value>${server.port}</value>
                         </property>
+
+                        <property>
+                            <name>StendKey</name>
+                            <value>${stend.key}</value>
+                        </property>
+
 
                     </systemProperties>
 
