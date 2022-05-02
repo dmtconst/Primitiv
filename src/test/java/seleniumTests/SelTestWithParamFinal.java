@@ -1,6 +1,10 @@
 package seleniumTests;
 
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.apache.commons.io.FileUtils;
 import org.aspectj.util.FileUtil;
 import org.testng.annotations.DataProvider;
@@ -28,8 +32,14 @@ public class SelTestWithParamFinal extends BaseTest {
         return words;
     }
 
+
+    @Epic("Селениум")
+    @Feature("Гугл тесты")
+    @Story("Проверяем поиск с параметрами")
+    @Description("Слова")
     @Test(dataProvider = "setWords")
     public void startTest(String word, String testName){
+        c.logToReport("ссылка на стенд:" + stenfUrl);
         getDriver().get(stenfUrl);
         getDriver().manage().window().maximize();
 
@@ -40,12 +50,14 @@ public class SelTestWithParamFinal extends BaseTest {
         Assertion as = new Assertion();
         as.assertTrue(sr.isImagesTubButtonIsExist());
 
-        File file = new File("./src/main/resources/screenShot" + testName +".jpg");
-            try {
-                FileUtils.writeByteArrayToFile(file,getScreenShot());
-            } catch (IOException e){
-                e.printStackTrace();
-            }
+//        //скриншоты
+//        File file = new File("./src/main/resources/screenShot" + testName +".jpg");
+//            try {
+//                FileUtils.writeByteArrayToFile(file,getScreenShot());
+//            } catch (IOException e){
+//                e.printStackTrace();
+//            }
+
     }
 
 //    @Test

@@ -2,6 +2,8 @@ package metods;
 
 import inheritance.Cat;
 import inheritance.Dog;
+import org.apache.cassandra.streaming.StreamOut;
+import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,6 +26,7 @@ public class Collection {
         list.add("meta1");
         list.add("meta22");
         list.add("meta3111");
+        System.out.println(list + "Этолиииии");
 
         for (String i : list){
             System.out.println("ForEach длина строки = " + i.length());
@@ -33,7 +36,6 @@ public class Collection {
 
         list.stream().filter(s -> s.length()<6).forEach(s -> System.out.println("фильтрованный метод" + s));
 
-
         list.stream().filter(s -> s.contains("2")).forEach(s -> System.out.println("содержит " + s));
 
         HashMap<String, Integer> map = new HashMap<String, Integer>();
@@ -41,6 +43,8 @@ public class Collection {
         map.put("Key1", 2);
         map.put("Key2", 3);
         System.out.println("Заначение в ключе Key1 = " + map.get("Key1"));
+        System.out.println(map + "Этааааа");
+
 
         Set<String> set;
         set = map.keySet();
@@ -78,4 +82,6 @@ public class Collection {
         System.out.println(map2.get(5));
         System.out.println(map2.get(7));
     }
+
+
 }

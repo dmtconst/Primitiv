@@ -1,5 +1,6 @@
 package pageObject.google;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,10 +21,12 @@ public class InitPajeObject extends Base {
     @FindBy(xpath = ".//a[contains(.,'www.youtube.com')]")
     private WebElement buttonYTube;
 
+    @Step("Вводим текст в строку поиска")
     public void setSearchText(String text){
         setText(searchText, text);
     }
 
+    @Step("Нажимаем на кнопку поиска")
     public void clickSubmitSearch(){
         click(submitSearch);
     }
